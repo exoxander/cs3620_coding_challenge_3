@@ -16,7 +16,7 @@ print("Double-discounted price: " +  str(discount(student_discount(price))))
 print("\n")
 
 #-----------------------< P2 lambda expression >---------------------
-print((lambda x:x*(x+5)**2)(5))
+print("Lambda result: " + str((lambda x:x*(x+5)**2)(5)))
 print("\n")
 
 #-----------------------< P3 map discount function to cost list >---------------------
@@ -28,7 +28,8 @@ item_costs = [1,3,5,7,9,100]
 #map item_discount to item_costs
 new_costs = list(map(item_discount, item_costs))
 
-print(new_costs)
+print("Original list: " + str(item_costs))
+print("Discount list: " + str(new_costs))
 print("\n")
 
 #-----------------------< P4 computer class inheritence>---------------------
@@ -42,7 +43,7 @@ class Computer():
         self.cost = _cost
 
     def get_specs(self):
-        return "{0}\t{1}\n".format(self.model_name, self.cost)
+        return "model:{0}\tcost:{1}\n".format(self.model_name, self.cost)
 
     def display_specs(self):
         print(self.get_specs())
@@ -57,7 +58,7 @@ class Desktop(Computer):
         self.size = _size
 
     def get_specs(self):
-        return "{0}\t{1}\t{2}\n".format(self.model_name, self.cost, self.size)
+        return "model:{0}\tcost:{1}\tsize:{2}\n".format(self.model_name, self.cost, self.size)
 
     def display_specs(self):
         print(self.get_specs())
@@ -72,7 +73,7 @@ class Laptop(Computer):
         self.weight = _weight
 
     def get_specs(self):
-        return "{0}\t{1}\t{2}\n".format(self.model_name, self.cost, self.weight)
+        return "model:{0}\tcost:{1}\tweight:{2}\n".format(self.model_name, self.cost, self.weight)
 
     def display_specs(self):
         print(self.get_specs())
@@ -83,6 +84,7 @@ b = Desktop("custom",1250,"mid-tower")
 c = Laptop("asus",900,4.2)
 
 #print
+print("Computer, Desktop, Laptop")
 a.display_specs()
 b.display_specs()
 c.display_specs()
